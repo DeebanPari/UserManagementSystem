@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<html>
+<style>
+    /*set border to the form*/
+
+    form {
+        border: 3px solid #f1f1f1;
+    }
+
+    #forms{
+        background-color:cadetblue;
+        width:60%;
+        margin-left:22%;
+
+    }
+    /*assign full width inputs*/
+    #login_image {
+        width: 20%;
+        height: 10%;
+        margin-left: 38%;
+        margin-top:2%;
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    /*set a style for the buttons*/
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+    }
+        /* set a hover effect for the button*/
+
+        button:hover {
+            opacity: 0.8;
+        }
+    /*set extra style for the cancel button*/
+
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+    }
+    /*centre the display image inside the container*/
+
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+    /*set image properties*/
+
+    img.avatar {
+        width: 40%;
+        border-radius: 50%;
+    }
+    /*set padding to the container*/
+
+    .container {
+        padding: 16px;
+    }
+    /*set the forgot password text*/
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+    /*set styles for span and cancel button on small screens*/
+    #create_text{
+       background-color:white;
+    }
+
+    #cancel_btn{
+        width:85%;
+        margin-bottom:5%;
+    }
+
+
+</style>
+
+<body>
+
+    <h2 style="margin-left:48.1%;color:blue">Login</h2>
+    <!--Step 1 : Adding HTML-->
+    <form id="forms" action="/action_page.php">
+        <img id="login_image" src="~/Content/Images/computer-science-g3da5d7266_1280.png" />
+
+        <div class="container">
+            <label style="margin-left:10%;"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required><br />
+
+            <label style="margin-left:10.2%;"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required><br />
+
+            <button type="submit" style="margin-left:24%; border-radius: 15px 15px;height:45px;width:110px;">Login</button>
+            <p style="margin-left: 20%" class="message">Not registered? <a id="create_text" href="#">@Html.ActionLink("Create an account", "Register", "Registration")</a></p><br />
+
+        </div>
+
+        <div id="cancel_btn" class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">@Html.ActionLink("Password", "Pass", "ForgetPass")</a></p><br /></span>
+        </div>
+    </form>
+
+</body>
+
+</html>
